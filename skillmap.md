@@ -1,9 +1,9 @@
 # sample
-* name: Game Maker Guide
-* description: Level up your game making skills by completing the tutorials in this guide.
+* name: Variable Emotions
+* description: Practice usingn different types of variables to create an emoji game.
 
 ## interface
-* name: Learn to use MakeCode Arcade
+* name: Variables and Emotions
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
 * completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/understanding-arcade-tutorials.pdf
 
