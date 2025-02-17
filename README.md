@@ -1,70 +1,110 @@
-# MakeCode Skill Map Sample
+# Emotion Game
 
-This is an example skill map that contains three separate learning paths.You can view the content here:
-https://arcade.makecode.com/skillmap#github:microsoft/pxt-skillmap-sample/skillmap.md
+## Introduction
+In this tutorial, you'll create a simple **Emotion Game** using **MakeCode Arcade** with Python. You'll learn about:
 
-Github-hosted skill maps are loaded in the same manner as tutorials, with a URL fragment
-formatted as follows:
+- **Variables**:
+  - `Sprite` variables for character images
+  - `Integer` variables for score
+  - `String` variables for emotions
+  - `Boolean` values for checking answers
+- **Conditionals** (`if`, `elif`, `else`) to change game logic
+- **Functions** (`def`) to organize your code
 
-`#github:[organization name]/[repository name]/[markdown file name]`
+### ~ tutorialHint
+In this game, pressing **Up** when the emotion is "happy" gives you a point. Otherwise, you lose a point. The emotion changes in a loop between "happy", "sad", and "angry."
+###
 
-## Syntax
+---
 
-The skill map definition can be found in the `skillmap.md` file. Metadata about the skill
-map itself can be found under the top-level heading:
+## **Step 1: Setting Up Your Variables**
+Let's start by creating the necessary **global variables**.
 
-- `id`: The string after the heading (eg `# sample`). Cannot contain spaces.
-- `name`: The title of your skill map. This will be displayed in the banner on the page.
-- `description`: A description of the map contents. This is also shown in the banner.
-- `infoUrl` (optional): A URL to a page with additional educator information
+```python
+mySprite: Sprite = None
+mySprite2: Sprite = None
+mySprite3: Sprite = None
+currentEmotion = ""
+~ tutorialHint
+mySprite, mySprite2, and mySprite3 are Sprite image variables.
+currentEmotion is a string variable that tracks the emotion.
 
-### Learning Paths
+Step 2: Creating the nextEmoji() Function
+Now, let's define a function to update the emotion and display the correct sprite.
 
-A skill map consists of one or more "paths", each path being an ordered sequence of activities.
-The first activity in each path is unlocked, and completing an activity unlocks the next one.
+python
+Copy
+Edit
+def nextEmoji():
+    global mySprite3, mySprite2, mySprite, currentEmotion  # Access global variables
+    
+    mySprite3 = sprites.create(assets.image("""
+        angry
+    """), SpriteKind.player)
+    mySprite2 = sprites.create(assets.image("""
+        sad
+    """), SpriteKind.player)
+    mySprite = sprites.create(assets.image("""
+        Happy
+    """), SpriteKind.player)
 
-A learning path is defined by a level two heading (`##`) has has the following properties:
+    # Conditional Logic to Change Emotions
+    if currentEmotion == "happy":
+        currentEmotion = "sad"
+    elif currentEmotion == "sad":
+        currentEmotion = "angry"
+    else:  # If it's "angry"
+        currentEmotion = "happy"
 
-- `id`: The string after the heading (eg `## interface`). Must be unique within this skill map.
-- `name`: The title of the path, displayed above the linked activities.
-- `description`: Additional details (not currently displayed).
-- `completionUrl`: URL to a certificate, displayed when a user has completed the entire path.
+    # Show only the correct emotion
+    if currentEmotion != "happy":
+        mySprite.set_flag(SpriteFlag.INVISIBLE, True)
+    if currentEmotion != "sad":
+        mySprite2.set_flag(SpriteFlag.INVISIBLE, True)
+    if currentEmotion != "angry":
+        mySprite3.set_flag(SpriteFlag.INVISIBLE, True)
+~ tutorialHint
+The if, elif, and else statements update the currentEmotion string.
+We use Sprite Image Variables to display the correct emotion.
+Booleans are used with set_flag(SpriteFlag.INVISIBLE, True) to hide incorrect sprites.
+Step 3: Handling Player Input
+Now, let's create the on_up_pressed() function to check the player's response.
 
-### Activities
+python
+Copy
+Edit
+def on_up_pressed():
+    if currentEmotion == "happy":  # Check if the emotion is "happy"
+        info.change_score_by(1)
+        game.splash("Yes!")  # Show a message
+        nextEmoji()  # Move to the next emotion
+    else:
+        info.change_score_by(-1)
+        game.splash("Better Luck Next time!")
+        nextEmoji()
+controller.up.on_event(ControllerButtonEvent.PRESSED, on_up_pressed)
+~ tutorialHint
+if checks if the emotion is "happy".
+else runs when the condition is false (not happy).
+The info.change_score_by(1) updates an integer variable (score).
+Step 4: Initializing the Game
+Now, let's set up the initial state of the game.
 
-Each learning path has multiple activities, defined by level three headings (`###`). Currently,
-an "activity" is simply a MakeCode tutorial, and has the following properties:
+python
+Copy
+Edit
+currentEmotion = "angry"  # Start with "angry"
+info.set_score(0)  # Set initial score to 0
+nextEmoji()  # Show the first emoji
+~ tutorialHint
+The integer variable info.set_score(0) keeps track of the score.
+nextEmoji() runs at the start to display the first emotion.
+Final Challenge
+Test your game! Can you modify the code to add more emotions? Try adding a "surprised" emotion and update the logic to include it.
 
-- `id`: The string after the heading (eg `### space-activity1`). Must be unique within this skill map.
-- `name`: The title of the activity. Displayed on the activity card.
-- `type`: The type of activity. Must be `tutorial` currently.
-- `description`: Details about the activity, displayed on the back of the card.
-- `tags`: Descriptive tags displayed on the bottom of the activity card.
-- `url`: Link to the tutorial. See the [MakeCode Tutorial Documentation](https://makecode.com/writing-docs/user-tutorials) for details on tutorial authoring and link formatting.
-- `imageUrl`: URL for the image displayed on the front of the activity card.
-
-## Forking
-
-If you fork this repo, be sure to change all URL references to https://github.com/microsoft/pxt-skillmap-sample to your forked repo's URL. Otherwise you won't see your changes.
-
-## Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+~ tutorialCompleted
+The game should: ✅ Start with "angry"
+✅ Change emotions in the correct order
+✅ Check for correct answers using if, elif, and else
+✅ Update the score
+✅ Display the correct sprite

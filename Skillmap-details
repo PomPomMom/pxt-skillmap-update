@@ -1,0 +1,72 @@
+{
+  "name": "Emotion Game",
+  "description": "Learn about variables in MakeCode Arcade by creating a game where a character's face changes emotions.",
+  "metadata": {
+    "usePython": true
+  },
+  "activities": [
+    {
+      "name": "Create Emotion Sprites",
+      "type": "tutorial",
+      "description": "Create sprite images for Happy, Sad, and Angry emotions.",
+      "url": "https://arcade.makecode.com/#tutorial:emotion-game-step1",
+      "tags": ["variables", "sprites"],
+      "editor": "arcade",
+      "reward": 10
+    },
+    {
+      "name": "Create Variables",
+      "type": "tutorial",
+      "description": "Set up variables to track the current emotion and the score.",
+      "url": "https://arcade.makecode.com/#tutorial:emotion-game-step2",
+      "tags": ["variables", "data"],
+      "editor": "arcade",
+      "reward": 10
+    },
+    {
+      "name": "Show Only One Emotion",
+      "type": "tutorial",
+      "description": "Use a function to display only the correct emotion sprite.",
+      "url": "https://arcade.makecode.com/#tutorial:emotion-game-step3",
+      "tags": ["functions", "visibility"],
+      "editor": "arcade",
+      "reward": 15
+    },
+    {
+      "name": "Cycle Through Emotions",
+      "type": "tutorial",
+      "description": "Write a function that changes the emotion in a set order.",
+      "url": "https://arcade.makecode.com/#tutorial:emotion-game-step4",
+      "tags": ["logic", "functions"],
+      "editor": "arcade",
+      "reward": 15
+    },
+    {
+      "name": "Add Button Controls",
+      "type": "tutorial",
+      "description": "Use A and B buttons to check answers and update score.",
+      "url": "https://arcade.makecode.com/#tutorial:emotion-game-step5",
+      "tags": ["input", "events"],
+      "editor": "arcade",
+      "reward": 20
+    },
+    {
+      "name": "Test Your Game!",
+      "type": "tutorial",
+      "description": "Run your game and check if everything works as expected.",
+      "url": "https://arcade.makecode.com/#tutorial:emotion-game-step6",
+      "tags": ["testing", "debugging"],
+      "editor": "arcade",
+      "reward": 20
+    },
+    {
+      "name": "Challenge: Add a New Emotion",
+      "type": "tutorial",
+      "description": "Extend the game by adding a new emotion and updating logic.",
+      "url": "https://arcade.makecode.com/#tutorial:emotion-game-challenge",
+      "tags": ["challenge", "creativity"],
+      "editor": "arcade",
+      "reward": 30
+    }
+  ]
+}
