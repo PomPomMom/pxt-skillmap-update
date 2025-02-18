@@ -14,7 +14,7 @@ In this tutorial, you'll create a simple **Emotion Game** using **MakeCode Arcad
 
 ### ~ tutorialHint
 In this game, pressing **Up** when the emotion is "happy" gives you a point. Otherwise, you lose a point. The emotion changes in a loop between "happy", "sad", and "angry."
-###
+
 
 
 ---
@@ -31,7 +31,6 @@ currentEmotion = "angry"
 ### ~ tutorialHint
 `mySprite`, `mySprite2`, and `mySprite3` are Sprite image variables.
 `currentEmotion` is a string variable that tracks the emotion.` 
-###
 
 
 ## **Step 2: Creating the nextEmoji() Function**
@@ -47,7 +46,6 @@ In Makecode Arcade, you must call a sprite with the `variable name`, Arcade `cal
 When you begin typine the call code `sprites.create` a popup should allow you to click to finish the code.
 ![Sprite initializing with popup to complete the code.](https://raw.githubusercontent.com/PomPomMom/Images/5d7ea68c31ab68517b403e690cee94b6c796d8ee/Create%20sprite%20python%20makecode%20arcade.png)
 
-##
 ```python
     def nextEmoji():
 
