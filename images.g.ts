@@ -180,6 +180,24 @@ ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 . . 4 4 4 4 4 4 4 4 4 4 4 . . 
 . . . . 4 4 4 4 4 4 4 . . . . 
 `;
+            case "image5":
+            case "wow":return img`
+. . . . 4 4 4 4 4 4 4 . . . . 
+. . 4 4 4 4 4 4 4 4 4 4 4 . . 
+. 4 4 4 4 4 4 4 4 4 4 4 4 4 . 
+. 4 4 4 c c c 4 c c c 4 4 4 . 
+4 4 4 4 1 1 1 4 1 1 1 4 4 4 4 
+4 4 4 4 1 1 1 4 1 1 1 4 4 4 4 
+4 4 4 4 1 f 1 4 1 f 1 4 4 4 4 
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+4 4 4 4 4 4 c c c 4 4 4 4 4 4 
+4 4 4 4 4 4 c c c 4 4 4 4 4 4 
+4 4 4 4 4 4 c c c 4 4 4 4 4 4 
+. 4 4 4 4 4 c c c 4 4 4 4 4 . 
+. 4 4 4 4 4 4 4 4 4 4 4 4 4 . 
+. . 4 4 4 4 4 4 4 4 4 4 4 . . 
+. . . . 4 4 4 4 4 4 4 . . . . 
+`;
         }
         return null;
     })
