@@ -10,18 +10,17 @@ In this tutorial, you'll create a simple **Emotion Game** using **MakeCode Arcad
   - `Sprite` variables for character images
   - `Integer` variables for score
   - `String` variables for emotions
-  - `Boolean` values for checking answers
 - **Conditionals** (`if`, `elif`, `else`) to change game logic
 - **Functions** (`def`) to organize your code
 
 
-### ~ tutorialHint
+### Hint
 In this game, pressing **Up** when the emotion is "happy" gives you a point. Otherwise, you lose a point. The emotion changes in a loop between "happy", "sad", and "angry."
-###
+
 
 ---
 
-###
+
 ## **Step 1: Set the Background**
 We will use a pre-made background that matches our game. From the toolkit, Click on `Scene` and click and drag the `Set Background Image to img`
 
@@ -34,7 +33,7 @@ Next to the first line of code there should be a paint palate icon. Click onthe 
 ![Palate icon appears next to the set background code](https://raw.githubusercontent.com/PomPomMom/Images/refs/heads/main/background%20image%20python.png)
 
 
-## **Step 3: Set up a score variable
+## **Step 3: Set up a score variable**
 This game will keep score for every time the player makes the correct choice. Let's set a variable to keep score.
 We will set this as an info type so it will be displayed on the screen.
 
@@ -52,7 +51,7 @@ currentEmotion = "angry"
 ```
 A **global variable** is a vairable that can be used anywhere in your code. This is different from **local variables** which can only be used in a section of the code.
 
-### ~ tutorialHint
+### Hint
 `mySprite`, `mySprite2`, and `mySprite3` are Sprite image variables.
 `currentEmotion` is a string variable that tracks the emotion.`
 
@@ -73,7 +72,7 @@ In Makecode Arcade, you must call a sprite with the `variable name`, Arcade `cal
 When you begin typing the call code `sprites.create` indented in the nextemoji() function, a popup should allow you to click to finish the code.
 ![Sprite initializing with popup to complete the code.](https://raw.githubusercontent.com/PomPomMom/Images/5d7ea68c31ab68517b403e690cee94b6c796d8ee/Create%20sprite%20python%20makecode%20arcade.png)
 
-##
+
 ```python
     def nextEmoji():
 
@@ -99,3 +98,5 @@ Add two more sprites using the same procedure as before, but give `mySprite2` th
         angry
     """), SpriteKind.player)
 ```
+## **Complete!**
+You have started your emoji game and learned about variables! Continue in the next activity to add conditionals to your game.
