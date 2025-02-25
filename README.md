@@ -23,7 +23,9 @@ In this game, pressing **Up** when the emotion is "happy" gives you a point. Oth
 
 ## **Step 1: Set the Background**
 We will use a pre-made background that matches our game. From the toolkit, Click on `Scene` and click and drag the `Set Background Image to img`
-
+```python
+scene.set_background_image()
+```
 ![Set background image code to drag into the editor space](https://raw.githubusercontent.com/PomPomMom/Images/refs/heads/main/set%20background%20image%20python%20makecode%20arcade.png)
 
 
