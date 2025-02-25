@@ -23,6 +23,7 @@ In this game, pressing **Up** when the emotion is "happy" gives you a point. Oth
 
 ## **Step 1: Set the Background**
 We will use a pre-made background that matches our game. From the toolkit, Click on `Scene` and click and drag the `Set Background Image to img`
+
 ```python
 scene.set_background_image()
 ```
@@ -102,3 +103,7 @@ Add two more sprites using the same procedure as before, but give `sad` the `sad
 ```
 ## **Complete!**
 You have started your emoji game and learned about variables! Continue in the next activity to add conditionals to your game.
+
+```python
+scene.set_background_color(0)
+````
