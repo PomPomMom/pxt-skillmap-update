@@ -42,17 +42,17 @@ info.set_score(0)
 ```
 ## **Step 4: Set Up Sprite Variables**
 Now let's create the necessary **global variables**. We will have 3 emotion sprites and a variable called `currentEmotion` so the program can keep track of which emotion is showing.
-
+Choose a name for each variable. One for happy, one for sad, and one for angry
 ```python
-mySprite: Sprite = None
-mySprite2: Sprite = None
-mySprite3: Sprite = None
+happy: Sprite = None
+sad: Sprite = None
+angry: Sprite = None
 currentEmotion = "angry"
 ```
 A **global variable** is a vairable that can be used anywhere in your code. This is different from **local variables** which can only be used in a section of the code.
 
 ### Hint
-`mySprite`, `mySprite2`, and `mySprite3` are Sprite image variables.
+`happy`, `sad`, and `angry` are Sprite image variables.
 `currentEmotion` is a string variable that tracks the emotion.`
 
 ## **Step 5: Create the nextEmoji() Function**
@@ -65,7 +65,7 @@ Anything included in this function must be indented beneath it.
 
 ## **Step 6: Add a sprite variable to your function**
 In Makecode Arcade, you must call a sprite with the `variable name`, Arcade `call code`, an `image`, and a `type`.
-- Name the sprite `mySprite`
+- Name the sprite `happy`
 - Make it equal to the Arcade call code: `sprites.create`
 - In parentheses, add a pre-made image by calling `"""happy"""`
 - after a comma, make the sprite a player kind by adding `SpriteKind.player`
@@ -76,7 +76,7 @@ When you begin typing the call code `sprites.create` indented in the nextemoji()
 ```python
     def nextEmoji():
 
-    mySprite = sprites.create(assets.image(""" happy """), SpriteKind.player)
+    happy = sprites.create(assets.image(""" happy """), SpriteKind.player)
  ```
 
 ## **Step 7: Add an Image to your Sprite Variable.**
@@ -84,17 +84,17 @@ When you have initialized your sprite, a paint palate icon will appear next to y
 ![Paint palate icon next to sprite code](https://github.com/PomPomMom/Images/blob/5d7ea68c31ab68517b403e690cee94b6c796d8ee/Image%20chooser.png?raw=true)
 
 At the top, choose "My Assets" and pick the happy face emoji. Then click Done in the bottom left corner.
-```mySprite = sprites.create(assets.image("""Happy"""), SpriteKind.player)```
+```happy = sprites.create(assets.image("""Happy"""), SpriteKind.player)```
 
 
 ## **Step 8: Add two more sprites**
-Add two more sprites using the same procedure as before, but give `mySprite2` the `sad` image and `mySprite3` the `angry` image.
+Add two more sprites using the same procedure as before, but give `sad` the `sad` image and `angry` the `angry` image.
 
 ```
-    mySprite2 = sprites.create(assets.image("""
+    sad = sprites.create(assets.image("""
         sad
     """), SpriteKind.player)
-    mySprite3 = sprites.create(assets.image("""
+    angry = sprites.create(assets.image("""
         angry
     """), SpriteKind.player)
 ```
